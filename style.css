@@ -202,4 +202,14 @@ footer p{
     justify-content: center;
     margin-bottom: 30px;
    }
+
+}
+@media only screen and (max-width: 700px){
+    .the-jobs-wrapper{
+        flex-direction: column;
+       margin-bottom: 10px;
+      }
+      .banner-wrapper>:nth-child(2){
+        margin-bottom: -50%;
+      }
 }
