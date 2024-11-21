@@ -113,6 +113,8 @@ loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
 
+//pop up part------------------------------------------------------------------------------------------------
+
 // Confirmation Modal
 const shareButton = document.getElementById("shareButton");
 const confirmationModal = document.getElementById("confirmationModal");
@@ -147,7 +149,11 @@ window.addEventListener("click", (event) => {
     setTimeout(() => {
       confirmationModal.classList.remove("active");
       confirmationModal.style.display = "none";
-    }, 500); // Wait for the animation to complete (500ms)
+    }, 500); 
   }
 });
+
+
+//leaderboard part-------------------------------------------------------------------------------------
+
 
