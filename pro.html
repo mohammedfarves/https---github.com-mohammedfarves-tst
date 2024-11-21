@@ -7,6 +7,8 @@
     <title>Speed Typing Game</title>
     <link rel="icon" href="logo1.png">
     <link rel="stylesheet" href="stylespro.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -44,6 +46,30 @@
                     </li>
                 </ul>
                 <button>Try Again</button>
+                <section>
+                    <!-- Only buttons on here -->
+                    <div class="mainButtons">
+                        <button id="shareButton">Try Again
+                            <i class="bx bx-share"></i>
+                        </button>
+                        </div>
+                      <!-- Main part | Share Button -->
+                        <div class="modal" id="confirmationModal">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2>THE TEST IS END</h2>
+                              <button id="closeModal">&times;</button>
+                            </div>
+                            <div class="modal-message">
+                              <p>The 60 seconds is end . well ... Your scores are displayed below .Try again it could be better!</p>
+                            </div>
+                            <div class="modal-buttons">
+                              <button class="cancel-button" id="cancelButton">Close</button>
+                              <button class="share-button" id="shareConfirmButton">Try Agian</button>
+                            </div>
+                          </div>
+                        </div>
+                </section>
             </div>
         </div>
     </div>
