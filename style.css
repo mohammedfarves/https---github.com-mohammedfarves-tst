@@ -101,7 +101,6 @@ img.int{
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     width: 100%;
-    height: fit-content;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .btn{
