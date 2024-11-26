@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient( #007acc, #6DD5FA, #FFFFFF);
+    background: linear-gradient( #9300e8, #8b6dfa, #FFFFFF);
 }
 #paragraph{
     color: #646669;
@@ -38,7 +38,7 @@ body {
 .wrapper .content-box {
     padding: 13px 20px 0;
     border-radius: 10px;
-    border: 4px solid #007acc;
+    border: 4px solid #9300e8;
 }
 .content-box .typing-text {
     overflow: hidden;
@@ -75,7 +75,7 @@ body {
     left: 0;
     opacity: 0;
     border-radius: 5px;
-    background: #007acc;
+    background: #9300e8;
     animation: blink 1s ease-in-out infinite;
 }
 @keyframes blink {
@@ -90,7 +90,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-top: 3px solid #007acc;
+    border-top: 3px solid #9300e8;
 }
 .content button {
     outline: none;
