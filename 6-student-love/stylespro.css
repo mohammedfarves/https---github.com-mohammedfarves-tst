@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient( #9300e8, #8b6dfa, #FFFFFF);
+}
+#paragraph{
+    color: #646669;
+}
+.result-details{
+    color: white;
+}
+::selection {
+    color: #fff;
+    background: #007acc;
+}
+.wrapper {
+    width: 700px;
+    padding: 35px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+.wrapper .input-field {
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.wrapper .content-box {
+    padding: 13px 20px 0;
+    border-radius: 10px;
+    border: 4px solid #9300e8;
+}
+.content-box .typing-text {
+    overflow: hidden;
+    max-height: 256px;
+}
+.typing-text::-webkit-scrollbar {
+    width: 0;
+}
+.typing-text p {
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+.typing-text p span {
+    position: relative;
+}
+.typing-text p span.correct {
+    color: #d1d0c5;
+}
+.typing-text p span.incorrect {
+    color: #ca4754;
+    border-radius: 4px;
+}
+/* .typing-text p span.active {
+    color: #17A2B8;
+} */
+.typing-text p span.active::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background: #9300e8;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}
+.content-box .content {
+    margin-top: 17px;
+    display: flex;
+    padding: 12px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid #9300e8;
+}
+.content button {
+    outline: none;
+    border: none;
+    width: 105px;
+    color: #007acc;
+    padding: 8px 0;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid #007acc;
+    background: none;
+    transition: transform 0.2s ease;
+}
+.content button:active {
+    transform: scale(0.89);
+}
+.content button:hover {
+    background: #FFFFFF;
+}
+.content .result-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+}
+.result-details li {
+    display: flex;
+    height: 20px;
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+.result-details li:not(:first-child) {
+    padding-left: 22px;
+    border-left: 2px solid #bfbfbf;
+}
+.result-details li p {
+    font-size: 13px;
+}
+.result-details li span {
+    display: block;
+    font-size: 13px;
+    margin-left: 10px;
+}
+li span b {
+    font-weight: 500;
+}
+li:not(:first-child) span {
+    font-weight: 500;
+}
+@media (max-width: 745px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .content-box .content {
+        padding: 20px 0;
+    }
+    .content-box .typing-text {
+        max-height: 100%;
+    }
+    .typing-text p {
+        font-size: 19px;
+        text-align: left;
+    }
+    .content button {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+    .content .result-details {
+        width: 100%;
+    }
+    .result-details li:not(:first-child) {
+        border-left: 0;
+        padding: 0;
+    }
+    .result-details li p,
+    .result-details li span {
+        font-size: 15px;
+    }
+}
+@media (max-width: 518px) {
+    .wrapper .content-box {
+        padding: 10px 15px 0;
+    }
+    .typing-text p {
+        font-size: 13px;
+    }
+    .result-details li {
+        margin-bottom: 10px;
+    }
+    .content button {
+        margin-top: 10px;
+    }
+}
+.buttonread{
+    margin: auto;
+    margin-top: 3%;
+    justify-content: center;
+    display: flex;
+    color: #FFF;
+    font-style: initial;
+    font-size: 20px;
+  }
+  .mainButtons button{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    display: grid;
+    height: 80px;
+    width: 200px;
+    padding: 7px 25px;
+    background-color: #4070f4;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .mainButtons button:hover {
+    background: #034bf1;
+    color: #fff;
+  }
+  
+  
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 8px;
+    width: 440px;
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.21, 0.99);
+  }
+  
+  .modal.active .modal-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation-name: slideIn;
+  }
+  
+  .modal.active.slideOut .modal-content {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    animation-name: slideOut;
+  
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .modal-header h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #4D4B4B;
+  }
+  .modal-message p {
+    margin: 0;
+    color: #5A5959;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150.023%; 
+    letter-spacing: 0.15px;
+  }
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    
+  }
+  .cancel-button, .share-button {
+    padding: 8px 16px;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+  .cancel-button {
+    width: 100px;
+    color: #4070f4;
+    background: #EBE8FF;
+  }
+  .cancel-button:hover {
+    background: #e3e3e3;
+  }
+  .share-button {
+    width: 120px;
+    background: #4070f4;
+    color: #FFF;
+    box-shadow: 0px 5px 9px 0px rgba(127, 106, 255, 0.18);
+  }
+  .share-button:hover {
+    box-shadow: 0px 5px 9px 0px rgba(127, 106, 255, 0.40);
+  }
+  
+  .modal-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a5a5a5; 
+    padding: 0;
+    font-size: 40px;
+    margin: 0;
+    line-height: 0px;
+  }
+  .modal-header button:hover {
+    color: #4D4B4B;
+  }
+  
+  @keyframes slideIn {
+    from {
+      top: 8%;
+      opacity: 0;
+    }
+    to {
+      top: 20%;
+      opacity: 1;
+    }
+  }
+  @keyframes slideOut {
+    from {
+      top: 20%;
+      opacity: 1;
+    }
+    to {
+      top: 5%;
+      opacity: 0;
+  
+    }
+  }

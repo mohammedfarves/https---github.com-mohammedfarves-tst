@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #651FFF;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* privacy End */
+
+/* pricing Start */
+.pricing {
+    padding: 100px 0px;
+    background: url("../images/pexels-codioful-6985001.jpg") no-repeat center;
+    background-size: cover;
+    
+}
+
+.pricing-wrapper ul {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.pricing-wrapper ul li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    
+}
+.pricing-wrapper span{
+    color:rgb(0, 0, 0);
+}
+.pricing-wrapper>div>div:last-child span {
+    color: #de6bef;
+
+}
+
+.pricing-wrapper>div>div:first-child>div {
+    border-radius: 30px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #ffffff;
+    padding: 50px;
+}
+
+.pricing-wrapper>div>div:last-child>div {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 50px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+
+
+/* pricing End */
+
+
+@media only screen and (min-width: 768px) {
+    .pricing-wrapper>div>div:last-child>div {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .pricing-wrapper>div>div:last-child>div {
+        border-radius: 30px;
+        margin-top: 30px;
+        font-size: smaller;
+        text-align: center;
+        padding: 30px;
+    }
+    .pricing-wrapper>div>div:first-child>div {
+        border-top-right-radius: 30px;
+        text-align: center;
+        margin-top: 30px;
+        font-size: smaller;
+        padding: 20px;
+        
+    }
+}
