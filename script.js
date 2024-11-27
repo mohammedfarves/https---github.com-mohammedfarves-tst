@@ -22,7 +22,8 @@ const paragraphs = [
 
 const typingText = document.querySelector(".typing-text p")
 const inpField = document.querySelector(".wrapper .input-field")
-const tryAgainBtn = document.querySelector(".content button")
+const tryAgainBtn = document.getElementById("try-btn")
+const tryAgainBtnpop = document.getElementById("try-btn-pop")
 const timeTag = document.querySelector(".time span b")
 const mistakeTag = document.querySelector(".mistake span")
 const wpmTag = document.querySelector(".wpm span")
@@ -32,6 +33,10 @@ let timer;
 let maxTime = 60;
 let timeLeft = maxTime;
 let charIndex = mistakes = isTyping = 0;
+
+if (timeLeft==0){
+    popUp(10);
+ }
 
 function loadParagraph() {
     const ranIndex = Math.floor(Math.random() * paragraphs.length);
@@ -62,7 +67,8 @@ function initTyping() {
                 }
                 characters[charIndex].classList.remove("correct", "incorrect");
             }
-        } else {
+        } 
+        else {
             if (characters[charIndex].innerText == typedChar) {
                 characters[charIndex].classList.add("correct");
             } else {
@@ -80,9 +86,11 @@ function initTyping() {
         wpmTag.innerText = wpm;
         mistakeTag.innerText = mistakes;
         cpmTag.innerText = charIndex - mistakes;
-    } else {
+    } 
+    else {
         clearInterval(timer);
         inpField.value = "";
+        popUp(Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60))
     }
 }
 
@@ -94,6 +102,7 @@ function initTimer() {
         wpmTag.innerText = wpm;
     } else {
         clearInterval(timer);
+        popUp(Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60))
     }
 }
 
@@ -112,48 +121,23 @@ function resetGame() {
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
-
-//pop up part------------------------------------------------------------------------------------------------
-
-// Confirmation Modal
-const shareButton = document.getElementById("shareButton");
-const confirmationModal = document.getElementById("confirmationModal");
-const closeModal = document.getElementById("closeModal");
-const cancelButton = document.getElementById("cancelButton");
-
-shareButton.addEventListener("click", () => {
-  confirmationModal.classList.add("active");
-  confirmationModal.classList.add("open");
-  confirmationModal.style.display = "block";
-});
-
-closeModal.addEventListener("click", () => {
-  confirmationModal.classList.add("slideOut");
-  setTimeout(() => {
-    confirmationModal.classList.remove("active", "slideOut");
-    confirmationModal.style.display = "none";
-  }, 500); // Wait for the animation to complete (500ms)
-});
-
-cancelButton.addEventListener("click", () => {
-  confirmationModal.classList.add("slideOut");
-  setTimeout(() => {
-    confirmationModal.classList.remove("open", "slideOut");
-    confirmationModal.style.display = "none";
-  }, 500); // Wait for the animation to complete (300ms)
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === confirmationModal) {
-    confirmationModal.classList.remove("open");
-    setTimeout(() => {
-      confirmationModal.classList.remove("active");
-      confirmationModal.style.display = "none";
-    }, 500); 
-  }
+tryAgainBtnpop.addEventListener("click", ()=>{
+    var pop = document.querySelector(".popup");
+    pop.style.display = "none";
+    resetGame()
 });
 
 
-//leaderboard part-------------------------------------------------------------------------------------
-
-
+function popUp(wp){
+    // var body = document.querySelector("body");
+    // body.style.backdropFilter = "blur(1000px)"
+    var w = document.getElementById("w");
+    var m = document.getElementById("m");
+    var c = document.getElementById("c");
+    var pop = document.querySelector(".popup");
+    w.innerHTML = wp
+    m.innerHTML = mistakes
+    c.innerHTML = charIndex - mistakes
+    pop.style.display = "block";
+}
+ 

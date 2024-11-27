@@ -92,7 +92,7 @@ body {
     justify-content: space-between;
     border-top: 3px solid #9300e8;
 }
-.content button {
+#try-btn,#try-btn-pop {
     outline: none;
     border: none;
     width: 105px;
@@ -357,3 +357,49 @@ li:not(:first-child) span {
   
     }
   }
+
+  .popup{
+    transition: 2s ease-in-out;
+    display: none;
+    position: absolute;
+    top: 29.5%;
+    left: 32.5%;
+    /* background: #1e1e1e; */
+    padding: 20px;
+    /* border: 2px solid white;
+    border-radius: 10px; */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    div{
+    color: white;
+    width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    text-align: center;
+
+    h1,p{
+      margin-bottom: 15px;
+    }}
+  }
+  @media (max-width: 518px){
+    .popup{
+      transition: 2s ease-in-out;
+      display: none;
+      position: absolute;
+      top: 25%;
+      left: 9.8%;
+      padding: 20px;
+      width: 300PX;
+      height: 340px;
+  }
+  .popup>div{
+    width: 260px;
+    height: 300px;
+  }
+}

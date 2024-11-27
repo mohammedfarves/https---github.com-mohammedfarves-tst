@@ -45,33 +45,21 @@
                         <span>0</span>
                     </li>
                 </ul>
-                <button>Try Again</button>
-                <section>
-                    <!-- Only buttons on here -->
-                    <div class="mainButtons">
-                        <button id="shareButton">Try Again
-                            <i class="bx bx-share"></i>
-                        </button>
-                        </div>
-                      <!-- Main part | Share Button -->
-                        <div class="modal" id="confirmationModal">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h2>THE TEST IS END</h2>
-                              <button id="closeModal">&times;</button>
-                            </div>
-                            <div class="modal-message">
-                              <p>The 60 seconds is end . well ... Your scores are displayed below .Try again it could be better!</p>
-                            </div>
-                            <div class="modal-buttons">
-                              <button class="cancel-button" id="cancelButton">Close</button>
-                              <button class="share-button" id="shareConfirmButton">Try Agian</button>
-                            </div>
-                          </div>
-                        </div>
-                </section>
+                <button id="try-btn">Try Again</button>
+             
             </div>
         </div>
     </div>
+    <div class="popup">
+        <div>
+            <h1>Time's Up!!!</h1>
+            <p>Mistakes: <i id="m"></i></p>
+            <p>Words Per Minnute : <i id="w"></i></p>
+            <p>Characters Per Minnute : <i id="c"></i></p>
+            <button id="try-btn-pop">Try Again</button>
+        </div>
+    </div>
+    </div>
+    
 </body>
 </html>
